@@ -45,7 +45,7 @@ function req(
         }
     }
 
-    // make the request
+    // make the request!
     return fetch(url, options)
 }
 
