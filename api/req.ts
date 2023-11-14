@@ -33,16 +33,14 @@ function req(
     let options: RequestInit = {}
     if (!body) {
         options.method = method ?? "GET"
-        options.headers = {
-            "Credentials": "include"
-        }
+        options.credentials = "include"
     } else {
         options.method = method ?? "POST"
         options.body = JSON.stringify(body)
         options.headers = {
-            "Credentials": "include",
             "Content-Type": "application/json"
         }
+        options.credentials = "include"
     }
 
     // make the request!
