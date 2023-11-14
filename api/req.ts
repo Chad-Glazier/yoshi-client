@@ -1,4 +1,4 @@
-const basePath = "http://api.coachyoshi.com/api/"
+const basePath = "https://api.coachyoshi.com/api/"
 
 type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE"
 
