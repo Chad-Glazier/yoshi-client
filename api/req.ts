@@ -18,14 +18,21 @@ function req(
     relativePath?: string,
     body?: any,
     method?: HttpMethod,
-    queryParams?: Record<string, string | number | boolean>
+    queryParams?: Record<string, string | number | boolean | string[] | number[] | boolean[]>
 ): Promise<Response> {
     // build out the request url
     let url = basePath + (relativePath ?? "")
     if (queryParams) {
         url += "?"
         for (const key in queryParams) {
-            url += `${key}=${queryParams[key]}&`
+            let val = queryParams[key]
+            if (Array.isArray(val)) {
+                val.forEach(el => {
+                    url += `${key}=${encodeURIComponent(el)}&`
+                });
+            } else {
+                url += `${key}=${encodeURIComponent(val)}&`
+            }
         }
     }
 

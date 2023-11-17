@@ -1,0 +1,42 @@
+.link {
+	position: relative;
+	z-index: 1;
+	padding: 0 3px;
+	text-decoration: none;
+
+	--transition: all 150ms ease-in-out;
+	--line-color: var(--accent-background-color);
+	--post-transition-color: var(--accent-text-color);
+}
+
+.link:hover {
+	color: var(--post-transition-color);
+	font-weight: 500;
+	transition: var(--transition);
+}
+
+.link::after {
+	height: 2px;
+	width: 100%;
+	left: 0;
+	bottom: 1px;
+	content: "";
+	position: absolute;
+	transition: var(--transition);
+	z-index: -1;
+	background-color: var(--line-color);
+}
+
+.link:hover::after {
+	height: calc(100% + 2px);
+	bottom: -1px;
+}
+
+.link .icon {
+	font-size: inherit;
+	transition: inherit;
+}
+
+.link:hover .icon {
+	color: var(--post-transition-color);
+}
