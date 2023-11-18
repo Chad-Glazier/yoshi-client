@@ -9,11 +9,12 @@ function LowEmphasis({
     text: string
 }) {
     return <button
+        className={style.button}
         onClick={e => {
             if (onClick) onClick()
         }}
     >
-        Low!
+        {text}
     </button>
 }
 

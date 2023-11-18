@@ -55,7 +55,7 @@ function Register({
             ref={displayName}
         />
         <Button
-            text="Log In!"
+            text="Register"
         />
     </Form>
 }

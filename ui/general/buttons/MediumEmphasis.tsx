@@ -9,11 +9,12 @@ function MediumEmphasis({
     text: string
 }) {
     return <button
+        className={style.button}
         onClick={e => {
             if (onClick) onClick()
         }}
     >
-        Medium!
+        {text}
     </button>
 }
 

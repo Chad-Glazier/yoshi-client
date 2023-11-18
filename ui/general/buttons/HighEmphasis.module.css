@@ -1,0 +1,36 @@
+.button {
+    font-size: var(--button-size);
+    text-transform: uppercase;
+    padding: 7px 12px;
+    font-weight: var(--button-font-weight);
+    z-index: 1;
+    position: relative;
+
+	--transition: all 150ms ease-in-out;
+
+    transition: var(--transition);
+    color: var(--secondary-text-color);
+    background-color: var(--secondary-background-color);
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: var(--accent-text-color);
+}
+
+.button::after {
+    height: 0px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	content: "";
+	position: absolute;
+	transition: var(--transition);
+	z-index: -1;
+	background-color: var(--accent-background-color);
+}
+
+.button:hover::after {
+    height: 100%;
+}
