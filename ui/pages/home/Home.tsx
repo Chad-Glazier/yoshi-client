@@ -24,8 +24,8 @@ function Home({
                 gap: "1rem"
             }}
         >
-            <Button emphasis="medium" text="medium" />
             <Button emphasis="low" text="low" />
+            <Button emphasis="medium" text="medium" />
             <Button emphasis="high" text="high" />
         </div>
     </>

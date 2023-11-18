@@ -1,6 +1,7 @@
 :root {
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 
   /* COLOR SCHEME */
   --global-background: rgb(255, 255, 255);
@@ -15,4 +16,7 @@
   /* Font Sizes */
   --button-font-size: 1.2rem;
   --button-font-weight: 600;
+
+  /* BUTTONS */
+  --button-border-radius: 0px;
 }

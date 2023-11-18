@@ -1,7 +1,7 @@
 .button {
     font-size: var(--button-size);
     text-transform: uppercase;
-    padding: 7px 12px;
+    padding: 5px 10px;
     font-weight: var(--button-font-weight);
     z-index: 1;
     position: relative;
@@ -11,26 +11,49 @@
     transition: var(--transition);
     color: var(--secondary-text-color);
     background-color: var(--secondary-background-color);
-    border: none;
+    border: 2px solid var(--secondary-background-color);
+    border-radius: var(--button-border-radius);
+}
+
+.button::before, .button::after {
+    border-radius: var(--button-border-radius);
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    background-color: transparent;
+    content: "";
+    transition: var(--transition);
+    z-index: 0;
+}
+
+.button::before {
+    left: 0;
+    top: 0;   
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-left: 2px solid var(--secondary-background-color);
+    border-top: 2px solid var(--secondary-background-color);
+}
+
+.button::after {
+    right: 0;
+    bottom: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 2px solid var(--secondary-background-color);
+    border-bottom: 2px solid var(--secondary-background-color);
 }
 
 .button:hover {
     cursor: pointer;
-    color: var(--accent-text-color);
 }
 
-.button::after {
-    height: 0px;
-	width: 100%;
-	left: 0;
-	bottom: 0;
-	content: "";
-	position: absolute;
-	transition: var(--transition);
-	z-index: -1;
-	background-color: var(--accent-background-color);
+.button:hover::before {
+    top: -7px;
+    left: -7px;
 }
 
 .button:hover::after {
-    height: 100%;
+    bottom: -7px;
+    right: -7px;
 }
